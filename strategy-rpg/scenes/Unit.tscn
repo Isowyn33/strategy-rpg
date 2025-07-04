@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3yknb8wlmgqw"]
+
+[ext_resource type="Script" uid="uid://cvtmsfr088j8v" path="res://scripts/characterBody2d.gd" id="1_fqlnf"]
+[ext_resource type="Texture2D" uid="uid://dhuiuplpm0ihw" path="res://assets/Default_Professional_graphic_design_2D_illustration_A_2D_pixel_0.jpg" id="1_h85lg"]
+
+[sub_resource type="GDScript" id="GDScript_aa524"]
+script/source = "extends Node2D
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fqlnf"]
+size = Vector2(24, 24)
+
+[node name="Unit" type="Node2D"]
+script = SubResource("GDScript_aa524")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_fqlnf")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(540, 540)
+texture = ExtResource("1_h85lg")
+offset = Vector2(-24, -24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_fqlnf")
